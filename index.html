@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Saifulla Tanim - Profile</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="profile-container">
+    <div class="cover"></div>
+
+    <div class="profile-header">
+      <img src="../image/Tanim.jpg" class="profile-avatar" alt="User">
+      <div class="profile-meta">
+        <div class="name-line">
+          <h2>Saifulla Tanim</h2>
+          <img src="../image/Verified.png" alt="Verified" class="verified-icon" />
+        </div>
+        <p class="username">@tanim</p>
+        <div class="meta-line">
+          <span class="location">📍 Dhaka, Bangladesh</span>
+          <span class="joined">📅 Joined April 2025</span>
+        </div>
+        <div class="follow-stats">
+          <span><strong>5</strong> Following</span>
+          <span><strong>3.3B</strong> Followers</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-nav">
+      <button class="tab active" data-tab="posts">Posts</button>
+      <button class="tab" data-tab="activity">Activity</button>
+      <button class="tab" data-tab="messages">Messages</button>
+      <button class="tab" data-tab="settings">Settings</button>
+    </div>
+
+    <div class="tab-content">
+      <div class="tab-panel active" id="posts">
+        <div class="post-card">
+          <p class="post-content">
+            This is a sample post. Let's raise our voice and support the cause. We stand with the people. ❤️🕊️
+          </p>
+          <div class="post-stats">
+            <span class="likes">👍 1M</span>
+            <span class="comments">💬 435K</span>
+            <span class="shares">🔄 888K</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="activity">
+        <ul>
+          <li>🟢 Shared a new post</li>
+          <li>💬 Commented on Tanim's story</li>
+          <li>🖼️ Updated profile picture</li>
+        </ul>
+      </div>
+
+      <div class="tab-panel" id="messages">
+        <h3>Direct Messages</h3>
+        <div class="message-box">
+          <div class="message received">
+            <div class="bubble">
+              <p>Hey! Are you free tomorrow?</p>
+              <span class="timestamp">10:32 AM</span>
+            </div>
+          </div>
+          <div class="message sent">
+            <div class="bubble">
+              <p>Yes, let's catch up in the evening.</p>
+              <span class="timestamp">10:35 AM</span>
+            </div>
+          </div>
+          <div class="message received">
+            <div class="bubble">
+              <p>Awesome. I’ll text you the place. 👌</p>
+              <span class="timestamp">10:36 AM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="settings">
+        <form class="settings-form">
+          <input type="text" placeholder="Full Name">
+          <input type="email" placeholder="Email Address">
+          <textarea placeholder="Write your bio..."></textarea>
+          <button type="submit">Update</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const tabs = document.querySelectorAll(".tab");
+    const panels = document.querySelectorAll(".tab-panel");
+
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        document.querySelector(".tab.active").classList.remove("active");
+        tab.classList.add("active");
+
+        panels.forEach(panel => panel.classList.remove("active"));
+        document.getElementById(tab.dataset.tab).classList.add("active");
+      });
+    });
+  </script>
+</body>
+</html>
